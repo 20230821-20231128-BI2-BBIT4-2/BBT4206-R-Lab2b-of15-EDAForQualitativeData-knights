@@ -250,7 +250,7 @@ summary(student_performance_dataset)
 
 # \<You can Provide Another Appropriate Title Here if you wish\>
 
-This R code takes a student performance dataset and performs data manipulation and aggregation tasks. It creates a new variable for the student's gender based on the 'gender' column, selects specific columns of interest, filters out rows with missing evaluation ratings, groups the data by class group and gender, calculates the average course evaluation rating for each group, and arranges the results in descending order of the average rating within each group. This code is useful for analyzing and comparing the average course evaluation ratings among different class groups and genders in the dataset.
+This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
 
 ```{r Your Sixth Code Chunk}
 evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
@@ -263,14 +263,60 @@ evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
   summarise(average_evaluation_rating =
               mean(`Average Course Evaluation Rating`)) %>%
   arrange(desc(average_evaluation_rating), .by_group = TRUE)
+
+# Decorated tabular output
+evaluation_per_group_per_gender %>%
+  rename(`Class Group` = class_group) %>%
+  rename(`Average Course Evaluation Rating` = average_evaluation_rating) %>%
+  select(`Class Group`, `Student's Gender`,
+         `Average Course Evaluation Rating`) %>%
+  mutate(`Average Course Evaluation Rating` =
+           color_tile("#B9BCC2", "#536CB5")
+           (`Average Course Evaluation Rating`)) %>%
+  kable("html", escape = FALSE, align = "c",
+        caption = "Course Evaluation Rating per Group and per Gender") %>%
+  kable_styling(bootstrap_options =
+                  c("striped", "condensed", "bordered"),
+                full_width = FALSE)
+
+# Decorated visual bar chart
+evaluation_per_group_per_gender %>%
+  ggplot() +
+  geom_bar(aes(x = class_group, y = average_evaluation_rating,
+               fill = `Student's Gender`),
+           stat = "identity", position = "dodge") +
+  expand_limits(y = 0) +
+  blue_grey_theme() +
+  scale_fill_manual(values = blue_grey_colours_2) +
+  ggtitle("Course Evaluation Rating per Group and per Gender") +
+  labs(x = "Class Group", y = "Average Rating")
 ```
 
 ## \<You Can Have a Sub-Title Here if you wish\>
 
-Describe the code chunk here.
+The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
 
 ```{r Your Seventh Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+expand_contractions <- function(doc) {
+  doc <- gsub("I'm", "I am", doc, ignore.case = TRUE)
+  doc <- gsub("you're", "you are", doc, ignore.case = TRUE)
+  doc <- gsub("he's", "he is", doc, ignore.case = TRUE)
+  doc <- gsub("she's", "she is", doc, ignore.case = TRUE)
+  doc <- gsub("it's", "it is", doc, ignore.case = TRUE)
+  doc <- gsub("we're", "we are", doc, ignore.case = TRUE)
+  doc <- gsub("they're", "they are", doc, ignore.case = TRUE)
+  doc <- gsub("I'll", "I will", doc, ignore.case = TRUE)
+  doc <- gsub("you'll", "you will", doc, ignore.case = TRUE)
+  doc <- gsub("he'll", "he will", doc, ignore.case = TRUE)
+  doc <- gsub("she'll", "she will", doc, ignore.case = TRUE)
+  doc <- gsub("it'll", "it will", doc, ignore.case = TRUE)
+  doc <- gsub("we'll", "we will", doc, ignore.case = TRUE)
+  doc <- gsub("they'll", "they will", doc, ignore.case = TRUE)
+  doc <- gsub("won't", "will not", doc, ignore.case = TRUE)
+  doc <- gsub("can't", "cannot", doc, ignore.case = TRUE)
+  doc <- gsub("n't", " not", doc, ignore.case = TRUE)
+  return(doc)
+}
 ```
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
