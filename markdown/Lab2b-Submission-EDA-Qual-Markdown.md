@@ -268,7 +268,7 @@ Next, we display the quartiles for each numeric variable[*... think of this proc
 summary(student_performance_dataset)
 ```
 
-# Decorated Tabular Output and Visual Bar Chart
+## Decorated Tabular Output and Visual Bar Chart
 
 This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
 
@@ -420,7 +420,7 @@ wordcloud2(evaluation_wishes_filtered_cloud, size = .5)
 ```
 
 
-##Term Frequency - Inverse Document Frequency (TF-IDF)
+## Term Frequency - Inverse Document Frequency (TF-IDF)
 
 This code segment calculates and visualizes TF-IDF (Term Frequency-Inverse Document Frequency) scores for words in course evaluation likes, categorized by class group. It starts by tokenizing the likes, removing undesirable words, and filtering out short words. Then, it computes the TF-IDF scores and identifies the top important words for each class group. The resulting words are arranged by their TF-IDF scores and displayed in a bar chart, with each class group having its own facet. This visualization provides insights into the most important and distinctive words used in course evaluation likes for different class groups, highlighting terms that have a significant impact on understanding feedback sentiments and trends within each group.
 
