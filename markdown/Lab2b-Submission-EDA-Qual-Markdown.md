@@ -1,43 +1,50 @@
----
-title: "Business Intelligence Lab Submission Markdown"
-author: Knights
-date: "04/10/2023"
-output:
-  github_document:
-    toc: yes
-    toc_depth: 4
-    fig_width: 6
-    fig_height: 4
-    df_print: default
-editor_options:
-  chunk_output_type: console
----
+Business Intelligence Lab Submission Markdown
+================
+\<135230\>
+\<22/09/2023\>
+
+- [Student Details](#student-details)
+- [Setup Chunk](#setup-chunk)
+- [Exploratory Data Analysis on Student
+  Performance](#exploratory-data-analysis-on-student-performance)
+  - [Analysis of the Data](#analysis-of-the-data)
 
 # Student Details
 
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 1.  135230 - B - Peter Aringo                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 2.  135356 -  B - Ann Kigera                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 3.  122883 - B - Michelle Guya                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 4.  134834 - B - Kasio Emmanuel                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 5.  136301 - B - Ian Nyameta                                                                                                                                              |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **GitHub Classroom Group Name**                   |   Knights                                                                                                       |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Course Code**                                   | BBT4206                                                                                                                                                                  |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Course Name**                                   | Business Intelligence II                                                                                                                                                 |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Program**                                       | Bachelor of Business Information Technology                                                                                                                              |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Semester Duration**                             | 21^st^ August 2023 to 28^th^ November 2023                                                                                                                               |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                   |                                                              |
+|---------------------------------------------------|--------------------------------------------------------------|
+| **Student ID Numbers and Names of Group Members** | 135230 - B - Peter Aringo                                          |
+|                                                   | 135356 - B - Ann Kigera                                            |
+|                                                   | 122883 - B - Michelle Guya                                         |
+|                                                   | 134834 - B - Kasio Emmanuel                                        |
+|                                                   | 136301 - B - Ian Nyameta                                           |
+| **GitHub Classroom Group Name**                   | Knights                                                      |
+| **Course Code**                                   | BBT4206                                                      |
+| **Course Name**                                   | Business Intelligence II                                     |
+| **Program**                                       | Bachelor of Business Information Technology                  |
+| **Semester Duration**                             | 21<sup>st</sup> August 2023 to 28<sup>th</sup> November 2023 |
+
+# Setup Chunk
+
+**Note:** the following KnitR options have been set as the global
+defaults:  
+`knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,                        collapse = FALSE, tidy = TRUE)`.
+
+> output:  
+>   
+> github_document:  
+> toc: yes  
+> toc_depth: 4  
+> fig_width: 6  
+> fig_height: 4  
+> df_print: default  
+>   
+> editor_options:  
+> chunk_output_type: console
+
+More KnitR options are documented here
+<https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html> and
+here <https://yihui.org/knitr/options/>.
 
 # Setup Chunk
 
