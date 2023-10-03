@@ -25,9 +25,7 @@ Business Intelligence Lab Submission Markdown
 <tbody>
 <tr class="odd">
 <td><strong>Student ID Numbers and Names of Group Members</strong></td>
-<td><p><em>&lt;list one student name, class group (just the letter; A,
-B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be
-between 2 and 5 members per group&gt;</em></p>
+<td>
 <ol type="1">
 <li><p>135230 - B - Peter Aringo</p></li>
 <li><p>135356 - B - Ann Kigera</p></li>
