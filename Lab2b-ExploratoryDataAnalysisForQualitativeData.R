@@ -118,7 +118,7 @@ require("languageserver")
 
 ## dplyr - For data manipulation ----
 if (!is.element("dplyr", installed.packages()[, 1])) {
-  install.packages("dplyr", dependencies = TRUE)
+  install.packages("dplyr", dependencies = TRUE) 
 }
 require("dplyr")
 
@@ -556,7 +556,7 @@ evaluation_likes_and_wishes <- student_performance_dataset %>%
   mutate(`Student's Gender` =
            ifelse(gender == 1, "Male", "Female")) %>%
   rename(`Class Group` = class_group) %>%
-  rename(Likes = `D - 1. \nWrite two things you like about the teaching and learning in this unit so far.`) %>% # nolint
+  rename(Likes = `D - 1. Write two things you like about the teaching and learning in this unit so far.`) %>% # nolint
   rename(Wishes = `D - 2. Write at least one recommendation to improve the teaching and learning in this unit (for the remaining weeks in the semester)`) %>% # nolint
   select(`Class Group`,
          `Student's Gender`, `Average Course Evaluation Rating`,
@@ -665,6 +665,7 @@ write.csv(evaluation_likes_and_wishes,
 # carry significant meaning on their own.
 # Examples of stopwords in English include:
 # "the," "and," "is," "in," "it," "of," "to," "for," and "with."
+
 
 # Additional examples can be seen here:
 head(sample(stop_words$word, 20), 20)
