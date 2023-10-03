@@ -1,7 +1,7 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
-author: "<Specify your group name here>"
-date: "<Specify the date when you submitted the lab>"
+author: "<Knights>"
+date: "<04/10/2023>"
 output:
   github_document: 
     toc: yes
@@ -18,7 +18,7 @@ editor_options:
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 1.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 1.  135230 - B - Peter Aringo                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
 |                                                   | 2.  ID - Class Group - Name                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
@@ -250,10 +250,19 @@ summary(student_performance_dataset)
 
 # \<You can Provide Another Appropriate Title Here if you wish\>
 
-Describe the code chunk here.
+This R code takes a student performance dataset and performs data manipulation and aggregation tasks. It creates a new variable for the student's gender based on the 'gender' column, selects specific columns of interest, filters out rows with missing evaluation ratings, groups the data by class group and gender, calculates the average course evaluation rating for each group, and arranges the results in descending order of the average rating within each group. This code is useful for analyzing and comparing the average course evaluation ratings among different class groups and genders in the dataset.
 
 ```{r Your Sixth Code Chunk}
-# Fill this with R related code that will be executed when the R markdown file
+evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
+  mutate(`Student's Gender` =
+           ifelse(gender == 1, "Male", "Female")) %>%
+  select(class_group, gender,
+         `Student's Gender`, `Average Course Evaluation Rating`) %>%
+  filter(!is.na(`Average Course Evaluation Rating`)) %>%
+  group_by(class_group, `Student's Gender`) %>%
+  summarise(average_evaluation_rating =
+              mean(`Average Course Evaluation Rating`)) %>%
+  arrange(desc(average_evaluation_rating), .by_group = TRUE)
 ```
 
 ## \<You Can Have a Sub-Title Here if you wish\>
@@ -263,6 +272,86 @@ Describe the code chunk here.
 ```{r Your Seventh Code Chunk}
 # Fill this with other R related code that will be executed when the R markdown
 ```
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
 
