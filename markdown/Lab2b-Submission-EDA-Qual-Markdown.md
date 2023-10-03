@@ -38,7 +38,7 @@ between 2 and 5 members per group&gt;</em></p>
 </tr>
 <tr class="even">
 <td><strong>GitHub Classroom Group Name</strong></td>
-<td><em>&lt;Knights&gt;</em></td>
+<td><em>Knights</em></td>
 </tr>
 <tr class="odd">
 <td><strong>Course Code</strong></td>
