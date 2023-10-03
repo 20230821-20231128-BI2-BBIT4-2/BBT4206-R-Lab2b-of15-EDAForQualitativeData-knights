@@ -1,7 +1,7 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
-author: "<Specify your group name here>"
-date: "<Specify the date when you submitted the lab>"
+author: "<Knights>"
+date: "<4/10/2023>"
 output:
   github_document: 
     toc: yes
@@ -18,9 +18,9 @@ editor_options:
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 1.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 1.  135230 - B - Peter Aringo                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 2.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 2.  135356 - B - Ann Kigera                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
 |                                                   | 3.  ID - Class Group - Name                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
@@ -28,7 +28,7 @@ editor_options:
 |                                                   |                                                                                                                                                                          |
 |                                                   | 5.  ID - Class Group - Name                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **GitHub Classroom Group Name**                   | *\<specify the name of the team you created on GitHub classroom\>*                                                                                                       |
+| **GitHub Classroom Group Name**                   | *\<knights\>*                                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Course Code**                                   | BBT4206                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -251,17 +251,80 @@ summary(student_performance_dataset)
 # \<You can Provide Another Appropriate Title Here if you wish\>
 
 Describe the code chunk here.
+This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
+
 
 ```{r Your Sixth Code Chunk}
 # Fill this with R related code that will be executed when the R markdown file
+evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
+  mutate(`Student's Gender` =
+           ifelse(gender == 1, "Male", "Female")) %>%
+  select(class_group, gender,
+         `Student's Gender`, `Average Course Evaluation Rating`) %>%
+  filter(!is.na(`Average Course Evaluation Rating`)) %>%
+  group_by(class_group, `Student's Gender`) %>%
+  summarise(average_evaluation_rating =
+              mean(`Average Course Evaluation Rating`)) %>%
+  arrange(desc(average_evaluation_rating), .by_group = TRUE)
+
+# Decorated tabular output
+evaluation_per_group_per_gender %>%
+  rename(`Class Group` = class_group) %>%
+  rename(`Average Course Evaluation Rating` = average_evaluation_rating) %>%
+  select(`Class Group`, `Student's Gender`,
+         `Average Course Evaluation Rating`) %>%
+  mutate(`Average Course Evaluation Rating` =
+           color_tile("#B9BCC2", "#536CB5")
+           (`Average Course Evaluation Rating`)) %>%
+  kable("html", escape = FALSE, align = "c",
+        caption = "Course Evaluation Rating per Group and per Gender") %>%
+  kable_styling(bootstrap_options =
+                  c("striped", "condensed", "bordered"),
+                full_width = FALSE)
+# Decorated visual bar chart
+evaluation_per_group_per_gender %>%
+  ggplot() +
+  geom_bar(aes(x = class_group, y = average_evaluation_rating,
+               fill = `Student's Gender`),
+           stat = "identity", position = "dodge") +
+  expand_limits(y = 0) +
+  blue_grey_theme() +
+  scale_fill_manual(values = blue_grey_colours_2) +
+  ggtitle("Course Evaluation Rating per Group and per Gender") +
+  labs(x = "Class Group", y = "Average Rating")
+
+
 ```
 
 ## \<You Can Have a Sub-Title Here if you wish\>
 
 Describe the code chunk here.
 
+The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
+
 ```{r Your Seventh Code Chunk}
 # Fill this with other R related code that will be executed when the R markdown
+expand_contractions <- function(doc) {
+  doc <- gsub("I'm", "I am", doc, ignore.case = TRUE)
+  doc <- gsub("you're", "you are", doc, ignore.case = TRUE)
+  doc <- gsub("he's", "he is", doc, ignore.case = TRUE)
+  doc <- gsub("she's", "she is", doc, ignore.case = TRUE)
+  doc <- gsub("it's", "it is", doc, ignore.case = TRUE)
+  doc <- gsub("we're", "we are", doc, ignore.case = TRUE)
+  doc <- gsub("they're", "they are", doc, ignore.case = TRUE)
+  doc <- gsub("I'll", "I will", doc, ignore.case = TRUE)
+  doc <- gsub("you'll", "you will", doc, ignore.case = TRUE)
+  doc <- gsub("he'll", "he will", doc, ignore.case = TRUE)
+  doc <- gsub("she'll", "she will", doc, ignore.case = TRUE)
+  doc <- gsub("it'll", "it will", doc, ignore.case = TRUE)
+  doc <- gsub("we'll", "we will", doc, ignore.case = TRUE)
+  doc <- gsub("they'll", "they will", doc, ignore.case = TRUE)
+  doc <- gsub("won't", "will not", doc, ignore.case = TRUE)
+  doc <- gsub("can't", "cannot", doc, ignore.case = TRUE)
+  doc <- gsub("n't", " not", doc, ignore.case = TRUE)
+  return(doc)
+}
+
 ```
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
