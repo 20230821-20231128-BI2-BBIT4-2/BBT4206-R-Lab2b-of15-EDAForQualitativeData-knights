@@ -1,7 +1,16 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
+<<<<<<< HEAD
 author: Knights
 date: "04/10/2023"
+=======
+author: "<Knights>"
+<<<<<<< HEAD
+date: "<4/10/2023>"
+=======
+date: "<04/10/2023>"
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
+>>>>>>> 7a3783fc7aa554e4a1b81f2e1ce6d2a04f025563
 output:
   github_document:
     toc: yes
@@ -20,7 +29,11 @@ editor_options:
 |                                                   |                                                                                                                                                                          |
 |                                                   | 1.  135230 - B - Peter Aringo                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
+<<<<<<< HEAD
+|                                                   | 2.  135356 - B - Ann Kigera                                                                                                                                              |
+=======
 |                                                   | 2.  135356 -  B - Ann Kigera                                                                                                                                              |
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 |                                                   |                                                                                                                                                                          |
 |                                                   | 3.  122883 - B - Michelle Guya                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
@@ -28,7 +41,15 @@ editor_options:
 |                                                   |                                                                                                                                                                          |
 |                                                   | 5.  136301 - B - Ian Nyameta                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
 | **GitHub Classroom Group Name**                   |   Knights                                                                                                       |
+=======
+<<<<<<< HEAD
+| **GitHub Classroom Group Name**                   | *\<knights\>*                                                                                                       |
+=======
+| **GitHub Classroom Group Name**                   | *\<Knights\>*                                                                                                       |
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
+>>>>>>> 7a3783fc7aa554e4a1b81f2e1ce6d2a04f025563
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Course Code**                                   | BBT4206                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -250,9 +271,18 @@ summary(student_performance_dataset)
 
 # Decorated Tabular Output and Visual Bar Chart
 
+<<<<<<< HEAD
+Describe the code chunk here.
+This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
+
+
+```{r Your Sixth Code Chunk}
+# Fill this with R related code that will be executed when the R markdown file
+=======
 This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
 
 ```{r Your Sixth Code Chunk}
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
   mutate(`Student's Gender` =
            ifelse(gender == 1, "Male", "Female")) %>%
@@ -278,7 +308,10 @@ evaluation_per_group_per_gender %>%
   kable_styling(bootstrap_options =
                   c("striped", "condensed", "bordered"),
                 full_width = FALSE)
+<<<<<<< HEAD
+=======
 
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 # Decorated visual bar chart
 evaluation_per_group_per_gender %>%
   ggplot() +
@@ -290,13 +323,24 @@ evaluation_per_group_per_gender %>%
   scale_fill_manual(values = blue_grey_colours_2) +
   ggtitle("Course Evaluation Rating per Group and per Gender") +
   labs(x = "Class Group", y = "Average Rating")
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 ```
 
 ## Data Cleansing for Qualitative Data
 
 The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
 
+The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
+
 ```{r Your Seventh Code Chunk}
+<<<<<<< HEAD
+# Fill this with other R related code that will be executed when the R markdown
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 expand_contractions <- function(doc) {
   doc <- gsub("I'm", "I am", doc, ignore.case = TRUE)
   doc <- gsub("you're", "you are", doc, ignore.case = TRUE)
@@ -317,6 +361,10 @@ expand_contractions <- function(doc) {
   doc <- gsub("n't", " not", doc, ignore.case = TRUE)
   return(doc)
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 ```
 
 ## Word Count
