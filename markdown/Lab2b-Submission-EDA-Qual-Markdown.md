@@ -38,8 +38,7 @@ between 2 and 5 members per group&gt;</em></p>
 </tr>
 <tr class="even">
 <td><strong>GitHub Classroom Group Name</strong></td>
-<td><em>&lt;specify the name of the team you created on GitHub
-classroom&gt;</em></td>
+<td><em>&lt;Knights&gt;</em></td>
 </tr>
 <tr class="odd">
 <td><strong>Course Code</strong></td>
