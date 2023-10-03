@@ -1,0 +1,175 @@
+Business Intelligence Lab Submission Markdown
+================
+<Specify your group name here>
+<Specify the date when you submitted the lab>
+
+- [Student Details](#student-details)
+- [Setup Chunk](#setup-chunk)
+- [Loading the Student Performance
+  Dataset](#loading-the-student-performance-dataset)
+  - [Description of the Dataset](#description-of-the-dataset)
+- [\<You can Provide Another Appropriate Title Here if you
+  wish\>](#you-can-provide-another-appropriate-title-here-if-you-wish)
+  - [\<You Can Have a Sub-Title Here if you
+    wish\>](#you-can-have-a-sub-title-here-if-you-wish)
+  - [\<You Can Have Another Sub-Title Here if you
+    wish\>](#you-can-have-another-sub-title-here-if-you-wish)
+
+# Student Details
+
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Student ID Numbers and Names of Group Members</strong></td>
+<td><p><em>&lt;list one student name, class group (just the letter; A,
+B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be
+between 2 and 5 members per group&gt;</em></p>
+<ol type="1">
+<li><p>ID - Class Group - Name</p></li>
+<li><p>ID - Class Group - Name</p></li>
+<li><p>ID - Class Group - Name</p></li>
+<li><p>ID - Class Group - Name</p></li>
+<li><p>ID - Class Group - Name</p></li>
+</ol></td>
+</tr>
+<tr class="even">
+<td><strong>GitHub Classroom Group Name</strong></td>
+<td><em>&lt;specify the name of the team you created on GitHub
+classroom&gt;</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Course Code</strong></td>
+<td>BBT4206</td>
+</tr>
+<tr class="even">
+<td><strong>Course Name</strong></td>
+<td>Business Intelligence II</td>
+</tr>
+<tr class="odd">
+<td><strong>Program</strong></td>
+<td>Bachelor of Business Information Technology</td>
+</tr>
+<tr class="even">
+<td><strong>Semester Duration</strong></td>
+<td>21<sup>st</sup> August 2023 to 28<sup>th</sup> November 2023</td>
+</tr>
+</tbody>
+</table>
+
+# Setup Chunk
+
+We start by installing all the required packages
+
+``` r
+## formatR - Required to format R code in the markdown ----
+if (!is.element("formatR", installed.packages()[, 1])) {
+  install.packages("formatR", dependencies = TRUE,
+                   repos="https://cloud.r-project.org")
+}
+require("formatR")
+
+
+## readr - Load datasets from CSV files ----
+if (!is.element("readr", installed.packages()[, 1])) {
+  install.packages("readr", dependencies = TRUE,
+                   repos="https://cloud.r-project.org")
+}
+require("readr")
+```
+
+------------------------------------------------------------------------
+
+**Note:** the following “*KnitR*” options have been set as the defaults
+in this markdown:  
+`knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE, collapse = FALSE, tidy.opts = list(width.cutoff = 80), tidy = TRUE)`.
+
+More KnitR options are documented here
+<https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html> and
+here <https://yihui.org/knitr/options/>.
+
+``` r
+knitr::opts_chunk$set(
+    eval = TRUE,
+    echo = TRUE,
+    warning = FALSE,
+    collapse = FALSE,
+    tidy = TRUE
+)
+```
+
+------------------------------------------------------------------------
+
+**Note:** the following “*R Markdown*” options have been set as the
+defaults in this markdown:
+
+> output:  
+>   
+> github_document:  
+> toc: yes  
+> toc_depth: 4  
+> fig_width: 6  
+> fig_height: 4  
+> df_print: default  
+>   
+> editor_options:  
+> chunk_output_type: console
+
+# Loading the Student Performance Dataset
+
+The 20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset is then
+loaded. The dataset and its metadata are available here:
+<https://drive.google.com/drive/folders/1-BGEhfOwquXF6KKXwcvrx7WuZXuqmW9q?usp=sharing>
+
+``` r
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+## Description of the Dataset
+
+We then display the number of observations and number of variables. We
+have 101 observations and 100 variables to work with.
+
+``` r
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+Next, we display the quartiles for each numeric
+variable<span id="highlight" style="color: blue">*… think of this
+process as **“storytelling using the data.”** Tell us what is happening;
+tell us what you are discovering as you proceed with the markdown; walk
+us through your code step-by-step (a code walkthrough).*</span>
+
+``` r
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+# \<You can Provide Another Appropriate Title Here if you wish\>
+
+Describe the code chunk here.
+
+``` r
+# Fill this with R related code that will be executed when the R markdown file
+```
+
+## \<You Can Have a Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+``` r
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+Describe the code chunk here.
+
+``` r
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+**etc.** as per the lab submission requirements. Be neat and communicate
+in a clear and logical manner.
