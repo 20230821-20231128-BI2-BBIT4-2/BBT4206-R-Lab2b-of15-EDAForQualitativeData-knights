@@ -1,7 +1,11 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
 author: "<Knights>"
+<<<<<<< HEAD
 date: "<4/10/2023>"
+=======
+date: "<04/10/2023>"
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 output:
   github_document: 
     toc: yes
@@ -20,15 +24,23 @@ editor_options:
 |                                                   |                                                                                                                                                                          |
 |                                                   | 1.  135230 - B - Peter Aringo                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
+<<<<<<< HEAD
 |                                                   | 2.  135356 - B - Ann Kigera                                                                                                                                              |
+=======
+|                                                   | 2.  135356 -  B - Ann Kigera                                                                                                                                              |
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 |                                                   |                                                                                                                                                                          |
-|                                                   | 3.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 3.  122883 - B - Michelle Guya                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 4.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 4.  134834 - B - Kasio Emmanuel                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 5.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 5.  136301 - B - Ian Nyameta                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
 | **GitHub Classroom Group Name**                   | *\<knights\>*                                                                                                       |
+=======
+| **GitHub Classroom Group Name**                   | *\<Knights\>*                                                                                                       |
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Course Code**                                   | BBT4206                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -248,14 +260,20 @@ Next, we display the quartiles for each numeric variable[*... think of this proc
 summary(student_performance_dataset)
 ```
 
-# \<You can Provide Another Appropriate Title Here if you wish\>
+# Decorated Tabular Output and Visual Bar Chart
 
+<<<<<<< HEAD
 Describe the code chunk here.
 This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
 
 
 ```{r Your Sixth Code Chunk}
 # Fill this with R related code that will be executed when the R markdown file
+=======
+This R code chunk operates on a student performance dataset, initially transforming and summarizing the data by creating a new gender variable, selecting relevant columns, filtering out missing data, grouping by class and gender, and calculating average evaluation ratings. This process facilitates the analysis of course evaluation ratings across various class groups and genders. Additionally, the code generates two forms of output. First, it produces a styled HTML table with column renaming, colour-coded ratings, and Bootstrap styling for better presentation. Second, it creates a visual bar chart using ggplot2, displaying average ratings by class group and gender with distinct colours and a customized theme. These visualizations offer a comprehensive and visually appealing way to explore and compare course evaluation ratings, enhancing the overall accessibility and informativeness of the dataset.
+
+```{r Your Sixth Code Chunk}
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 evaluation_per_group_per_gender <- student_performance_dataset %>% # nolint
   mutate(`Student's Gender` =
            ifelse(gender == 1, "Male", "Female")) %>%
@@ -281,6 +299,10 @@ evaluation_per_group_per_gender %>%
   kable_styling(bootstrap_options =
                   c("striped", "condensed", "bordered"),
                 full_width = FALSE)
+<<<<<<< HEAD
+=======
+
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 # Decorated visual bar chart
 evaluation_per_group_per_gender %>%
   ggplot() +
@@ -292,18 +314,24 @@ evaluation_per_group_per_gender %>%
   scale_fill_manual(values = blue_grey_colours_2) +
   ggtitle("Course Evaluation Rating per Group and per Gender") +
   labs(x = "Class Group", y = "Average Rating")
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 ```
 
-## \<You Can Have a Sub-Title Here if you wish\>
+## Data Cleansing for Qualitative Data
 
-Describe the code chunk here.
+The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
 
 The provided R code defines a function called expand_contractions, which takes a text document as input and expands common contractions within the text. It uses the gsub function to replace contractions like "I'm" with "I am," "you're" with "you are," and so on, making the text more explicit and suitable for natural language processing or text analysis tasks. The function is case-insensitive, ensuring it works for contractions in both uppercase and lowercase forms, and it's particularly useful for preprocessing text data for various linguistic analyses.
 
 ```{r Your Seventh Code Chunk}
+<<<<<<< HEAD
 # Fill this with other R related code that will be executed when the R markdown
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 expand_contractions <- function(doc) {
   doc <- gsub("I'm", "I am", doc, ignore.case = TRUE)
   doc <- gsub("you're", "you are", doc, ignore.case = TRUE)
@@ -324,15 +352,136 @@ expand_contractions <- function(doc) {
   doc <- gsub("n't", " not", doc, ignore.case = TRUE)
   return(doc)
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a25fe5062d0f5ce01bccc78face0d80beb98928f
 ```
 
-## \<You Can Have Another Sub-Title Here if you wish\>
+## Word Count
 
-Describe the code chunk here.
+This code processes and presents data related to word counts in evaluation likes based on gender. Initially, it groups the data by gender and calculates the number of words in each group. It then arranges the results in descending order of word count. The code further enhances the presentation by coloring the word count values using a light blue gradient, renaming the column, and creating an HTML table with a caption that describes the preprocessing steps, such as removing contractions, special characters, stopwords, short words, and censored words. The final table is styled with Bootstrap options, making it a visually informative summary of word counts in evaluation likes categorized by gender.
 
 ```{r Your Eighth Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+word_count_per_gender_likes <- evaluation_likes_filtered %>%
+  group_by(`Student's Gender`) %>%
+  summarise(num_words = n()) %>%
+  arrange(desc(num_words))
+
+word_count_per_gender_likes %>%
+  mutate(num_words = color_bar("lightblue")(num_words)) %>%
+  rename(`Number of Words` = num_words) %>%
+  kable("html", escape = FALSE, align = "c",
+        caption = "Number of Significant Words in Evaluation Likes 
+                   per Gender: Minus contractions, special characters, 
+                   stopwords, short words, and censored words.") %>%
+  kable_styling(bootstrap_options =
+                  c("striped", "condensed", "bordered"),
+                full_width = FALSE)
 ```
 
-**etc.** as per the lab submission requirements. Be neat and communicate in a clear and logical manner.
+## Top Words
+
+This code segment analyzes and visualizes the most frequently used words in course evaluation likes separately for female and male students. It starts by selecting specific columns of interest, including class group, student gender, average course evaluation ratings, and tokenized likes. It then filters the data for either female or male students, counts the frequency of each tokenized like, and selects the top 10 most frequent ones. The resulting words are reordered based on their frequency and plotted in horizontal bar charts using ggplot2. The visualizations display the term frequency of these words, providing insights into the most common expressions in course evaluation likes for both female and male students, respectively.
+
+```{r Your Ninth Code Chunk}
+### Top 10 words for female students ----
+evaluation_likes_filtered %>%
+  select(`Class Group`, `Student's Gender`,
+         `Average Course Evaluation Rating`, `Likes (tokenized)`) %>%
+  filter(`Student's Gender` == "Female") %>%
+  count(`Likes (tokenized)`, sort = TRUE) %>%
+  top_n(9) %>%
+  mutate(`Likes (tokenized)` = reorder(`Likes (tokenized)`, n)) %>%
+  ggplot() +
+  geom_col(aes(`Likes (tokenized)`, n), fill = blue_grey_colours_1) +
+  blue_grey_theme() +
+  xlab("Word in Course Evaluation") +
+  ylab("Number of Times Used (Term Frequency)") +
+  ggtitle("Most Frequently Used Words in Course Evaluation Likes for Female
+          Students") +
+  coord_flip()
+
+### Top 10 words for male students ----
+evaluation_likes_filtered %>%
+  select(`Class Group`, `Student's Gender`,
+         `Average Course Evaluation Rating`, `Likes (tokenized)`) %>%
+  filter(`Student's Gender` == "Male") %>%
+  count(`Likes (tokenized)`, sort = TRUE) %>%
+  top_n(9) %>%
+  mutate(`Likes (tokenized)` = reorder(`Likes (tokenized)`, n)) %>%
+  ggplot() +
+  geom_col(aes(`Likes (tokenized)`, n), fill = blue_grey_colours_1) +
+  blue_grey_theme() +
+  xlab("Word in Course Evaluation") +
+  ylab("Number of Times Used (Term Frequency)") +
+  ggtitle("Most Frequently Used Words in Course Evaluation Likes for Male
+          Students") +
+  coord_flip()
+```
+
+## Word Cloud
+
+This code generates two word clouds, one for evaluation likes and another for evaluation wishes. It starts by counting the frequency of tokenized words in both datasets, sorting them in descending order. Then, it uses the wordcloud2 function to create interactive word cloud visualizations. The size parameter controls the font size of the words within the cloud. These word clouds provide a visually appealing way to showcase the most commonly used words in both evaluation likes and wishes, allowing quick insights into the key themes and sentiments expressed in the feedback.
+
+```{r Your Tenth Code Chunk}
+## Evaluation Likes ----
+evaluation_likes_filtered_cloud <- evaluation_likes_filtered %>% # nolint
+  count(`Likes (tokenized)`, sort = TRUE)
+
+wordcloud2(evaluation_likes_filtered_cloud, size = .5)
+
+## Evaluation Wishes ----
+evaluation_wishes_filtered_cloud <- evaluation_wishes_filtered %>% # nolint
+  count(`Wishes (tokenized)`, sort = TRUE)
+
+wordcloud2(evaluation_wishes_filtered_cloud, size = .5)
+```
+
+
+##Term Frequency - Inverse Document Frequency (TF-IDF)
+
+This code segment calculates and visualizes TF-IDF (Term Frequency-Inverse Document Frequency) scores for words in course evaluation likes, categorized by class group. It starts by tokenizing the likes, removing undesirable words, and filtering out short words. Then, it computes the TF-IDF scores and identifies the top important words for each class group. The resulting words are arranged by their TF-IDF scores and displayed in a bar chart, with each class group having its own facet. This visualization provides insights into the most important and distinctive words used in course evaluation likes for different class groups, highlighting terms that have a significant impact on understanding feedback sentiments and trends within each group.
+
+```{r Your Eleventh Code Chunk}
+### TF-IDF Score per Group ----
+popular_tfidf_words_likes <- evaluation_likes_filtered %>% # nolint
+  unnest_tokens(word, `Likes (tokenized)`) %>%
+  distinct() %>%
+  filter(!word %in% undesirable_words) %>%
+  filter(nchar(word) > 3) %>%
+  rename(`Likes (tokenized)` = word) %>%
+  select(`Class Group`, `Student's Gender`,
+         `Average Course Evaluation Rating`, `Likes (tokenized)`) %>%
+  count(`Class Group`, `Likes (tokenized)`, sort = TRUE) %>%
+  ungroup() %>%
+  bind_tf_idf(`Likes (tokenized)`, `Class Group`, n)
+
+head(popular_tfidf_words_likes)
+
+top_popular_tfidf_words <- popular_tfidf_words_likes %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(`Likes (tokenized)` =
+           factor(`Likes (tokenized)`,
+                  levels = rev(unique(`Likes (tokenized)`)))) %>%
+  group_by(`Class Group`) %>%
+  slice(seq_len(10)) %>%
+  ungroup() %>%
+  arrange(`Class Group`, tf_idf) %>%
+  mutate(row = row_number())
+
+top_popular_tfidf_words %>%
+  ggplot(aes(x = row, tf_idf, fill = `Class Group`)) +
+  geom_col(fill = blue_grey_colours_1) +
+  blue_grey_theme() +
+  labs(x = "Word in Course Evaluation", y = "TF-IDF Score") +
+  ggtitle("Important Words using TF-IDF by Chart Level") +
+  ggtitle("Most Important Words by TF-IDF Score in Course Evaluation Likes per 
+      Class Group") +
+  facet_wrap(~`Class Group`, scales = "free") +
+  scale_x_continuous(
+                     breaks = top_popular_tfidf_words$row,
+                     labels = top_popular_tfidf_words$`Likes (tokenized)`) +
+  coord_flip()
+```
+
